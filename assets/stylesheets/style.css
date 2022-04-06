@@ -1,0 +1,141 @@
+/* -------------------------------------------------------------- */
+/* CSS - Reset */
+/* -------------------------------------------------------------- */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    background: none;
+}
+/* -------------------------------------------------------------- */
+/* CSS - Theme light */
+/* -------------------------------------------------------------- */
+[data-theme="light"] {
+    --border-color: #CFCFCF;
+    --background-color: #E1E1E1;
+    --main-background-color: #FFFFFF;
+}
+/* -------------------------------------------------------------- */
+/* CSS - Theme dark */
+/* -------------------------------------------------------------- */
+[data-theme="dark"] {
+    --border-color: #5B5B5B;
+    --background-color: #9B9B9B;
+    --main-background-color: #3B3B3B;
+}
+/* -------------------------------------------------------------- */
+/* CSS - Scrollbar */
+/* -------------------------------------------------------------- */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--background-color);
+}
+/* -------------------------------------------------------------- */
+/* CSS - Body */
+/* -------------------------------------------------------------- */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+/* -------------------------------------------------------------- */
+/* CSS - Wysiwyg */
+/* -------------------------------------------------------------- */
+#wysiwyg {
+    display: flex;
+    flex-direction: column;
+    max-width: 750px;
+    height: 450px;
+    border-radius: 5px;
+    background-color: var(--main-background-color);
+    box-shadow: 0px 0px 5px #00000080;
+}
+/* -------------------------------------------------------------- */
+/* CSS - Conteneur des boutons de l'éditeur */
+/* -------------------------------------------------------------- */
+#wysiwyg > #buttons {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+}
+#wysiwyg > #buttons > #topMenu {
+    border-bottom: 1px solid var(--border-color);
+}
+#wysiwyg > #buttons > #bottomMenu {
+    border-bottom: 1px solid var(--border-color);
+}
+/* -------------------------------------------------------------- */
+/* CSS - Menu supérieur */
+/* -------------------------------------------------------------- */
+#wysiwyg > #buttons > #topMenu {
+    display: flex;
+    height: 50px;
+}
+/* -------------------------------------------------------------- */
+/* CSS - Menu inférieur */
+/* -------------------------------------------------------------- */
+#wysiwyg > #buttons > #bottomMenu {
+    display: flex;
+    height: 50px;
+}
+/* -------------------------------------------------------------- */
+/* CSS - Zone de texte */
+/* -------------------------------------------------------------- */
+#wysiwyg > #textEditor {
+    width: 100%;
+    height: calc(100% - 50px);
+    padding: 20px;
+    resize: none;
+    overflow: auto;
+}
+/* -------------------------------------------------------------- */
+/* CSS - Boutons de l'éditeur */
+/* -------------------------------------------------------------- */
+#wysiwyg > #buttons > #topMenu > button,
+#wysiwyg > #buttons > #bottomMenu > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    position: relative;
+    transition: background-color 0.5s ease-in-out;
+    cursor: pointer;
+}
+#wysiwyg > #buttons > #topMenu > button:hover,
+#wysiwyg > #buttons > #bottomMenu > button:hover {
+    background-color: var(--background-color);
+}
+#wysiwyg > #buttons > #topMenu > #decreaseLine {
+    border-right: 1px solid var(--border-color);
+}
+#wysiwyg > #buttons > #bottomMenu > #createLink {
+    border-left: 1px solid var(--border-color);
+}
+#wysiwyg > #buttons > #bottomMenu > #insertVideo {
+    border-right: 1px solid var(--border-color);
+}
+#wysiwyg > #buttons > #bottomMenu > #code {
+    border-left: 1px solid var(--border-color);
+}
+#wysiwyg > #buttons > #topMenu > button > img,
+#wysiwyg > #buttons > #bottomMenu > button > img {
+    width: 30px;
+}
+#wysiwyg > #buttons > #bottomMenu > button > input {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 10;
+}
+#wysiwyg > #buttons > #topMenu > select {
+    width: 100px;
+    padding: 0px 10px;
+    border-right: 1px solid var(--border-color);
+}
